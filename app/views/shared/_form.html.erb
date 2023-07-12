@@ -1,32 +1,33 @@
-<%= form_with model: @user, url: sign_up_path, class: "row g-3" do |form| %>
-  
+<h1>New user</h1>
+
+<%= form_with model: @user, url: sign_up_path, method: :post, class: "row g-3" do |form| %>
   <% if @user.errors.any? %>
     <div class="alert alert-danger">
-      <><%= @user.errors.messages.each do |message| %>
-        <div><%= message %></div>
+      <p>Please try again later</p>
+      <% @user.errors.full_messages.each do |message| %>
+        <div>
+          <%= message %>
+        </div>
       <% end %>
     </div>
   <% end %>
-  
 
-  <div class="col-12">
+
+  <div class='col-12'>
     <%= form.label :email %><br>
-    <%= form.text_field :email, class: "form-control" %>
+    <%= form.text_field :email, class: "form-control", placeholder: "sdfs@gmail.com" %>
   </div>
 
-  <div class="col-12 col-md-6">
+  <div class='col-12 col-md-6'>
     <%= form.label :password %><br>
-    <%= form.password_field :password, class: "form-control" %>
+    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
   </div>
-
-  <div class="col-12 col-md-6">
+  <div class='col-12 col-md-6'>
     <%= form.label :password_confirmation %><br>
-    <%= form.password_field :password_confirmation, class: "form-control" %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
   </div>
 
-  <br/>
-
-  <div class="col-12 col-md-6">
-    <%= form.submit class: "btn btn-primary" %>
+  <div class='col-12 col-md-6'>
+    <%= form.submit "sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
