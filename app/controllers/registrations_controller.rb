@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#  registration parameters stored if available
 class RegistrationsController < ApplicationController
   def new
     @user = User.new
