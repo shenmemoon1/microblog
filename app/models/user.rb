@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # email: string
 # password_digest: string
 #
