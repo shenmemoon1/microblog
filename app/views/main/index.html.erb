@@ -2,13 +2,3 @@
   <h1>Welcome to ruby on rails</h1>
   
 </div>
-<div>
-  <% if @user %>
-      login in as: <%= @user.email %>
-  <% end %>
-</div>
-
-
-<% if @user %>
-  <%= button_to "logout", logout_path, class: "btn btn-info mt-2", method: :delete %>
-<% end %>
