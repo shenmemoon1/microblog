@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'password', to: 'password#edit', as: :edit_password
+  patch 'password', to: 'password#update', as: :update_password
+
   # destroy
   delete 'logout', to: 'sessions#destroy'
   # index

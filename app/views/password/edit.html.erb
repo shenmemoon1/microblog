@@ -1,0 +1,22 @@
+<p>Find me in app/views/password/edit.html.erb</p>
+<h1>edit password</h1>
+<%= form_with model: Current.user, url: edit_password_path, method: :patch, class: "row g-3" do |form| %>
+  <% if form.object.errors.any? %>
+    <div class='alert alert-danger'>
+      <% form.object.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class='col-12 col-md-6'>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+  </div>
+  <div class='col-12 col-md-6'>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+  </div>
+  <div class='col-12 col-md-6'>
+    <%= form.submit "Update Password", class: "btn btn-primary" %>
+  </div>
+<% end %>
