@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
   get 'about', to: 'about#index'
+  # paswords reset
+  get 'password/reset', to: 'password_reset#new'
+  post 'password/reset', to: 'password_reset#create'
 end
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
