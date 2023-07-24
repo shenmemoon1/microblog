@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # paswords reset
   get 'password/reset', to: 'password_reset#new'
   post 'password/reset', to: 'password_reset#create'
+  # paswords reset edit
+  get 'password/reset/edit', to: 'password_reset#edit'
+  post 'password/reset/edit', to: 'password_reset#update'
 end
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
